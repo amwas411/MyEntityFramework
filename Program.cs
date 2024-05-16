@@ -15,7 +15,17 @@ serviceCollection.AddSingleton<UnitOfWork>();
 var serviceProvider = serviceCollection.BuildServiceProvider();
 
 var unitOfWork = serviceProvider.GetService<UnitOfWork>() ?? throw new ApplicationException("Unit of work service could not be created");
-unitOfWork.Add(new Person("Name", "Surname"));
+var city = new City("Kirov");
+var person = new Person("John", "Doe")
+{
+	PassportNumber = "123",
+	Age = 20,
+	City = city
+};
+
+unitOfWork.Add(city);
+unitOfWork.Add(person);
+
 Console.WriteLine("Rows affected: {0}", await unitOfWork.Commit());
 foreach (var i in await unitOfWork.GetEntitiesAsync<Person>())
 {
