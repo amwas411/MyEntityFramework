@@ -14,9 +14,9 @@ internal class Person : Entity
 	public string Surname { get; set; } = string.Empty;
 
 	/// <summary>
-	/// Номер паспорта.
+	/// Паспорт.
 	/// </summary>
-	public string? PassportNumber { get; set; }
+	public Passport? Passport { get; set; }
 	
 	/// <summary>
 	/// Возраст.
@@ -50,20 +50,47 @@ internal class Person : Entity
 	/// </summary>
 	/// <param name="name">Имя.</param>
 	/// <param name="surname">Фамилия.</param>
-	public Person(string name, string surname)
+	/// <param name="age">Возраст.</param>
+	public Person(string name, string surname, int age)
 	{
 		ArgumentException.ThrowIfNullOrEmpty(name);
 		ArgumentException.ThrowIfNullOrEmpty(surname);
 		Name = name;
 		Surname = surname;
+    Age = age;
+	}
+
+	/// <summary>
+	/// Создаёт персону.
+	/// </summary>
+	/// <param name="name">Имя.</param>
+	/// <param name="surname">Фамилия.</param>
+	/// <param name="age">Возраст.</param>
+	/// <param name="city">Город.</param>
+	public Person(string name, string surname, int age, City? city) : this(name, surname, age)
+	{
+    City = city;
+	}
+
+	/// <summary>
+	/// Создаёт персону.
+	/// </summary>
+	/// <param name="name">Имя.</param>
+	/// <param name="surname">Фамилия.</param>
+	/// <param name="age">Возраст.</param>
+	/// <param name="city">Город.</param>
+	/// <param name="passport">Паспорт.</param>
+	public Person(string name, string surname, int age, City? city, Passport? passport) : this(name, surname, age, city)
+	{
+    Passport = passport;
 	}
 
 	/// <summary>
 	/// Получить строковое представление.
 	/// </summary>
-	/// <returns>Строка со значениями некоторым свойств персоны.</returns>
+	/// <returns>Строка со значениями свойств персоны.</returns>
 	public override string ToString()
 	{
-		return string.Format("Name {0}, Surname {1}, Age {2}, City {3}", Name, Surname, Age, City?.Id);
+		return string.Format("Name {0}, Surname {1}, Age {2}, City {3}, Passport {4}", Name, Surname, Age, City?.Id, Passport?.Id);
 	}
 }

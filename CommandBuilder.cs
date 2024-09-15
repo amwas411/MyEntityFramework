@@ -25,7 +25,7 @@ internal class CommandBuilder(DbCommand command)
 	private readonly string _insertQueryValueTemplate = "({0})";
 	
 	// Шаблон списка значений в UPDATE запросе.
-	private readonly string _updateQueryValueTemplate = "{0}={1}";
+	private readonly string _updateQueryValueTemplate = "\"{0}\"={1}";
 	
 	// Шаблон названия параметра запроса.
 	private readonly string _parameterTemplate = "@P{0}";

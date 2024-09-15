@@ -16,4 +16,18 @@ internal class Entity
 	{
 		return (Entity)MemberwiseClone();
 	}
+
+  /// <summary>
+  /// Сравнить две сущности.
+  /// </summary>
+  /// <param name="entity">Сущность.</param>
+  /// <returns>true, если сущности равны.</returns>
+  public bool IsEqual(Entity entity)
+  {
+    if (entity == null)
+    {
+      return false;
+    }
+    return entity.Id == Id && entity.GetType() == GetType();
+  }
 }
