@@ -1,3 +1,5 @@
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Состояние сущности.
 /// </summary>

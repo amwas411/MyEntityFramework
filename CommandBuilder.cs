@@ -1,6 +1,8 @@
 using System.Text;
 using System.Data.Common;
 
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Построитель команд.
 /// </summary>

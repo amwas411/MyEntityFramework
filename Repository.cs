@@ -1,11 +1,13 @@
 using System.Data;
 using System.Data.Common;
 
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Репозиторий.
 /// </summary>
 /// <param name="connection">Соединение.</param>
-internal class Repository(DbConnection connection) : IRepository
+public class Repository(DbConnection connection) : IRepository
 {
 	// Шаблон SELECT запроса.
 	private readonly string _selectCommandTemplate = "SELECT {0} FROM \"{1}\";";

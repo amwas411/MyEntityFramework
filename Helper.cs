@@ -1,5 +1,7 @@
 using System.Text;
 
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Хелпер.
 /// </summary>

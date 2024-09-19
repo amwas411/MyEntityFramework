@@ -1,8 +1,9 @@
+namespace Yarkov.UnitOfWork;
 /// <summary>
 /// Обёртка сущности.
 /// </summary>
 /// <param name="entity">Сущность.</param>
-internal class WrappedEntity(Entity entity)
+public class WrappedEntity(Entity entity)
 {
   /// <summary>
   /// Сущность.

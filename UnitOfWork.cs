@@ -1,12 +1,14 @@
 using System.Data.Common;
 using System.Text;
 
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Единица работы.
 /// </summary>
 /// <param name="connection">Соединение.</param>
 /// <param name="repository">Репозиторий.</param>
-internal class UnitOfWork(DbConnection connection, IRepository repository)
+public class UnitOfWork(DbConnection connection, IRepository repository)
 {
   /// <summary>
   /// Соединение.

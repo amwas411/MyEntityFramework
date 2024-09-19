@@ -1,7 +1,9 @@
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Сущность.
 /// </summary>
-internal class Entity
+public class Entity
 {
 	/// <summary>
 	/// Идентификатор.

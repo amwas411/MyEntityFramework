@@ -1,7 +1,9 @@
+namespace Yarkov.UnitOfWork;
+
 /// <summary>
 /// Репозиторий.
 /// </summary>
-interface IRepository
+public interface IRepository
 {
 	/// <summary>
 	/// Асинхронное чтение данных.
